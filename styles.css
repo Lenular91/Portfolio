@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+/* General Reset and Font */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Color Variables */
 :root {
   --bg-color: #081b29;
   --main-color: #00abf0;
@@ -22,54 +24,57 @@
   --box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
 }
 
+/* Body Styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--bg-color);
-    color: var(--text-color);
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  /* overflow: hidden; */ /* REMOVED:  Allow scrolling on the body */
 }
 
+/* Wrapper Styles */
 .wrapper {
-    position: relative;
-    width: 66rem;
-    height: 45rem;
-    padding: 2rem;
-    perspective: 250rem;
-    animation: show-animate 2s forwards;
+  position: relative;
+  width: 66rem;
+  height: 45rem;
+  padding: 2rem;
+  perspective: 250rem;
+  animation: show-animate 2s forwards;
 }
 
+/* Animation Keyframes */
 @keyframes show-animate {
+  0%,
+  30% {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
 
-    0%, 
-    30% {
-      opacity: 0;
-      transform: rotate(-20deg);  
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotate(0deg);
-    }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }
 
+/* Cover Styles */
 .cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: var(--cover-color);
-    box-sizing: var(--box-shadow);
-    border-top-left-radius: .6rem;
-    border-bottom-left-radius: .6rem;
-    transform-origin: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--cover-color);
+  box-sizing: var(--box-shadow);
+  border-top-left-radius: .6rem;
+  border-bottom-left-radius: .6rem;
+  transform-origin: right;
 }
 
 .cover.cover-left {
-    z-index: -1;
+  z-index: -1;
 }
 
 .cover.cover-right {
@@ -78,17 +83,19 @@ body {
 }
 
 .cover.cover-right.turn {
-   transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
+/* Book Styles */
 .book {
   position: relative;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   display: flex;
   perspective: 250rem;
 }
 
+/* Book Page Styles */
 .book .book-page {
   position: absolute;
   width: 50%;
@@ -103,6 +110,7 @@ body {
   box-shadow: -.6rem .6rem .6rem rgba(0, 0, 0, .1);
 }
 
+/* Profile Page Styles */
 .profile-page {
   display: flex;
   flex-direction: column;
@@ -132,7 +140,7 @@ body {
 }
 
 .profile-page .social-media {
-  margin: .6rem 0 .8rem
+  margin: .6rem 0 .8rem;
 }
 
 .profile-page .social-media a {
@@ -153,7 +161,7 @@ body {
 .profile-page .social-media a:hover {
   background: var(--main-color);
   color: var(--white-color);
-} 
+}
 
 .profile-page p {
   text-align: justify;
@@ -163,6 +171,7 @@ body {
   margin-top: 1.2rem;
 }
 
+/* Button Styles */
 .btn {
   display: inline-flex;
   justify-content: center;
@@ -194,6 +203,7 @@ body {
   color: var(--white-color);
 }
 
+/* Right Page Styles */
 .book-page.page-right {
   position: absolute;
   right: 0;
@@ -206,6 +216,7 @@ body {
   transform: rotateY(-180deg);
 }
 
+/* Page Front and Back Styles */
 .book-page .page-front,
 .book-page .page-back {
   position: absolute;
@@ -225,11 +236,13 @@ body {
   transform: rotateY(180deg) translateZ(1px);
 }
 
+/* Title Styles */
 .title {
   text-align: center;
   margin-bottom: 1rem;
 }
 
+/* Work Education Box Styles */
 .workeduc-box {
   border-left: var(--border);
 }
@@ -259,6 +272,7 @@ body {
   margin-right: .4rem;
 }
 
+/* Number Page Styles */
 .number-page {
   position: absolute;
   bottom: 1.2rem;
@@ -266,6 +280,7 @@ body {
   transform: translateX(-50%);
 }
 
+/* Next Previous Button Styles */
 .nextprev-btn {
   position: absolute;
   bottom: .9rem;
@@ -289,6 +304,7 @@ body {
   left: 1.5rem;
 }
 
+/* Services Box Styles */
 .services-box {
   display: flex;
   flex-wrap: wrap;
@@ -308,7 +324,6 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-
 .services-content i {
   font-size: 2.5rem;
   color: var(--main-color);
@@ -327,6 +342,7 @@ body {
   height: 2.5rem;
 }
 
+/* Skills Box Styles */
 .skills-box {
   display: flex;
   flex-wrap: wrap;
@@ -371,19 +387,20 @@ body {
   color: var(--main-color);
 }
 
+/* Portfolio Box Styles */
 .portfolio-box .img-box {
   display: flex;
   width: 100%;
   height: 15rem;
   border: var(--border);
-  border-radius: .5rem; 
+  border-radius: .5rem;
   overflow: hidden;
 }
 
 .portfolio-box .img-box img {
   width: 100%;
   object-fit: cover;
-  transition: .5s ease
+  transition: .5s ease;
 }
 
 .portfolio-box .img-box:hover img {
@@ -428,6 +445,7 @@ body {
   margin: 0 1.15rem;
 }
 
+/* Contact Box Styles */
 .contact-box {
   text-align: center;
 }
@@ -456,6 +474,7 @@ body {
   cursor: pointer;
 }
 
+/* Back Profile Styles */
 .back-profile {
   position: absolute;
   bottom: 1.2rem;
@@ -493,4 +512,142 @@ body {
   opacity: 1;
   transform: translateX(-50%) scale(1);
   top: -1.8rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        overflow-y: auto; /* Enable vertical scroll */
+        min-height: auto; /* Adjust height to content */
+        display: block; /* Change to block display */
+        padding: 1rem; /* Add some padding */
+    }
+
+    .wrapper {
+        width: 100%; /* Take full width */
+        height: auto; /* Adjust height to content */
+        padding: 0; /* Remove padding */
+        perspective: none; /* Remove perspective */
+    }
+
+    .cover {
+        display: none; /* Hide cover */
+    }
+
+    .book {
+        width: 100%; /* Take full width */
+        height: auto; /* Adjust height to content */
+        display: block; /* Change to block display */
+        perspective: none; /* Remove perspective */
+    }
+
+    .book .book-page {
+        position: relative; /* Change to relative positioning */
+        width: 100%; /* Take full width */
+        height: auto; /* Adjust height to content */
+        display: block; /* Change to block display */
+        padding: 1rem; /* Add some padding */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .book-page.page-left,
+    .book-page.page-right {
+        transform: none !important; /* Remove transformations */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .book-page .page-front,
+    .book-page .page-back {
+        position: relative; /* Change to relative positioning */
+        width: 100%; /* Take full width */
+        height: auto; /* Adjust height to content */
+        padding: 1rem; /* Add some padding */
+        transform: none; /* Remove transformations */
+    }
+
+    .profile-page img {
+        max-width: 120px; /* Adjust image size */
+    }
+
+    .profile-page h1 {
+        font-size: 2rem; /* Adjust font size */
+    }
+
+    .profile-page h3 {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .btn {
+        width: 7rem; /* Adjust button size */
+        height: 2.5rem; /* Adjust button size */
+        font-size: 0.9rem; /* Adjust font size */
+        margin: 0 0.5rem; /* Adjust margin */
+    }
+
+    .services-box {
+        flex-direction: column; /* Stack services */
+    }
+
+    .skills-box .skills-content {
+        flex: 1 1 100%; /* Take full width */
+    }
+
+    .skills-content .content span {
+        width: 4rem; /* Adjust span size */
+        height: 4rem; /* Adjust span size */
+        font-size: 0.8rem; /* Adjust font size */
+    }
+
+    .skills-content .content span i {
+        font-size: 2rem; /* Adjust font size */
+    }
+
+    .portfolio-box .img-box {
+        height: 10rem; /* Adjust image height */
+    }
+
+    .portfolio-box .info-box .info-title h3 {
+        font-size: 1.1rem; /* Adjust font size */
+    }
+
+    .nextprev-btn,
+    .back-profile {
+        display: none; /* Hide buttons */
+    }
+
+    .workeduc-box {
+        border-left: none; /* Remove border */
+    }
+
+    .workeduc-box .workeduc-content {
+        padding-left: 0; /* Remove padding */
+    }
+
+    .workeduc-box .workeduc-content::before {
+        left: 0; /* Adjust position */
+    }
+
+    /* Reset transformations and positioning for all relevant elements */
+    .cover,
+    .book,
+    .book .book-page,
+    .book-page.page-left,
+    .book-page.page-right,
+    .book-page .page-front,
+    .book-page .page-back {
+        transform: none;
+        position: relative; /* or static, depending on your layout needs */
+        width: 100%;
+        height: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        display: block; /* Ensure they stack vertically */
+    }
+    .wrapper {
+      padding: 0;
+    }
 }
